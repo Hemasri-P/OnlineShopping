@@ -1,0 +1,23 @@
+﻿<form method="post">
+
+    <input type="text" name="num" />
+
+    <input type="text" name="text" />
+
+    <input type="submit"  />
+
+
+</form>
+
+
+@if (ViewData["n"] != null)
+{
+    
+    for (int i = 0; i <= Convert.ToInt32(ViewData["n"]); i++)
+    {
+
+        @ViewData["m"];
+    }
+    
+}
+

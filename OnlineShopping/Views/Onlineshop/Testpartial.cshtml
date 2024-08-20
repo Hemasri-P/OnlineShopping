@@ -1,0 +1,41 @@
+﻿@model OnlineShopping.Models.Feedbacktbl
+
+    <select id="dropdown" asp-for=Pid class="form-control">
+        <option value="">Select</option>
+        @if (ViewBag.DropDowndata != null)
+        {
+        @foreach (var item in (IEnumerable<SelectListItem>)ViewBag.DropDownData)
+        {
+            <option>@item.Value</option>
+        }
+        }
+    </select>
+<form method="post" asp-controller="Onlineshop" asp-action="Testpartial">
+
+<select asp-for="Ratings" class="form-control">
+
+       <option>1</option>
+
+        <option>2</option>
+
+        <option>3</option>
+
+        <option>4</option>
+
+        <option>5</option>
+
+</select>
+
+<textarea rows="5" cols="50" class="form-control" asp-for="Usermessage"></textarea>
+
+    <input type="submit" value="Send Feedback" class="btn btn-primary" />
+
+
+
+
+</form>
+    
+
+<div class="btn btn-info">
+    @ViewData["msg"]
+</div>

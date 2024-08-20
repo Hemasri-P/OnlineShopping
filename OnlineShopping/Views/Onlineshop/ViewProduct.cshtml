@@ -1,0 +1,20 @@
+﻿@model List<OnlineShopping.Models.Product>
+
+<div class="row">
+    @foreach(var item in Model)
+    {
+         <div class="col-md-4">
+        <img src=/@item.Pimage height="90px" />
+        <div>@item.Pid</div>
+        <div>@item.Pname</div>
+        <div>@item.Description</div>
+        <div>@item.Price</div>
+            <div>
+                <a class="btn btn-outline-primary" asp-controller="Onlineshop" asp-action="Buy" asp-route-pid=@item.Pid>Buy Now</a>
+            </div>
+
+    </div>
+    }
+</div>
+
+ 

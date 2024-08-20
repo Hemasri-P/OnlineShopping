@@ -1,0 +1,47 @@
+﻿<h1> Hello World</h1>
+
+
+
+<html>
+
+    <a asp-controller="Home" asp-action="Proclink">Proclink</a>
+    <a asp-controller="Home" asp-action="ShowDate">Showdate</a> 
+   
+
+</html>
+
+@ViewData["test1"]
+@ViewData["test2"]
+@ViewBag.Test
+
+@foreach( string i in (string[])ViewData["CountryNames"])
+{
+    <ul>
+        <li>@i</li>
+    </ul>
+}
+
+<hr/>
+
+@foreach( string i in ViewBag.CountryNames)
+{
+    <ul>
+        <li>@i</li>
+    </ul>
+}
+@* // INSTEAD OF DOING ABOVE CODE , WE CAN WRITE LIKE THIS *@
+@{
+    void hello(string[] data)
+    {
+        foreach (var item in data)
+        {
+            <li>@item</li>
+        }
+        <hr />
+    }
+}
+@{
+
+    hello((string[])ViewData["CountryNames"]);
+    hello(ViewBag.CountryNames);
+}
